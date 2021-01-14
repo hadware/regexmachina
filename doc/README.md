@@ -53,7 +53,7 @@ Some ideas that could make the API more rigorous, straightforward or simply powe
 
 ## Notes regarding the implementation
 
-The ideal way of implementing this would be to find another librairy that does something similar, and just make some "transpiler" between the librairy's paradigm and ours. I haven't found anything that looks like this for now. Maybe we should take a better look at pattern matching librairies though.
+The ideal way of implementing this would be to find another library that does something similar, and just make some "transpiler" between the librairy's paradigm and ours. I haven't found anything that looks like this for now. Maybe we should take a better look at pattern matching librairies though.
 
 If we decide to make everything from scratch (which I'm seriously considering), here's my conclusion regarding what we need to make this work:
 * A parser for regular expressions, using property names as tokens (the parser/lexer should use a librairy though)
@@ -62,6 +62,7 @@ If we decide to make everything from scratch (which I'm seriously considering), 
 * The DFA does the work of "validating" the input list (does it match or not? where does it match?)
 
 Here are the resources that might help us:
+* regex BNF grammar https://stackoverflow.com/questions/265457/regex-bnf-grammar
 * an pdf extract from a book on compilers (in this folder) explaining how to convert a regex to a nfa, and and nfa to a dfa. Also explains briefly what those two theorertical objects are
 * this website : https://swtch.com/~rsc/regexp/regexp1.html . Kind of does the same thing, but much more sunccintly, and illustrating the process with some C code. Based on the original paper from Thomson regarding the Regex -> DFA translation
 * This repo : https://github.com/bekahwojtala/NFA-to-DFA . An implementation in python of the NFA -> DFA algorithm, pretty clean.
